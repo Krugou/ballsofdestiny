@@ -17,6 +17,7 @@ public class KeepMoving : MonoBehaviour
         // Initialize the last position to the current position of the BallKing
         lastPosition = ballKing.transform.position;
         gameOverText.text = ""; // Ensure the game over text is empty at the start
+        StartCoroutine(SlowUpdate());
     }
 
     // Update is called once per frame
@@ -44,18 +45,7 @@ public class KeepMoving : MonoBehaviour
                 }
             }
 
-            // If the R key is pressed, reload the current scene
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-
             yield return new WaitForSeconds(0.5f); // wait for half a second before the next update
         }
-    }
-
-    void Start()
-    {
-        StartCoroutine(SlowUpdate());
     }
 }
