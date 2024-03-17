@@ -1,9 +1,3 @@
-
-
-/// <summary>
-/// Moves the ball king based on the input value.
-/// </summary>
-/// <param name="movementValue">The input value representing the movement direction.</param>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +10,7 @@ public class ballKingMovement : MonoBehaviour
     private float movementY;
     public float jumpForce = 2.0f; // You can adjust this value to get the desired jump height
     public float speed = 0; // You can adjust this value to get the desired speed
+    public GameObject plane; // Reference to the plane GameObject
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +23,14 @@ public class ballKingMovement : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         rb.AddForce(movement * speed);
 
+        // Get the size of the plane
+        Vector3 planeSize = plane.GetComponent<Renderer>().bounds.size;
+
+        // Clamp the position of the BallKing within the boundaries of the plane
+        Vector3 position = rb.position;
+        position.x = Mathf.Clamp(position.x, -planeSize.x / 2, planeSize.x / 2);
+        position.z = Mathf.Clamp(position.z, -planeSize.z / 2, planeSize.z / 2);
+        rb.position = position;
     }
 
     // Update is called once per frame
