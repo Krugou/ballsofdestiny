@@ -1,3 +1,9 @@
+
+
+/// <summary>
+/// Moves the ball king based on the input value.
+/// </summary>
+/// <param name="movementValue">The input value representing the movement direction.</param>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
