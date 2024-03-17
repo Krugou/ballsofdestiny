@@ -20,32 +20,42 @@ public class KeepMoving : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator SlowUpdate()
     {
-        // Check if the BallKing has moved
-        if (ballKing.transform.position != lastPosition)
+        while (true)
         {
-            // If the BallKing has moved, reset the timer and update the last position
-            timeSinceLastMove = 0;
-            lastPosition = ballKing.transform.position;
-        }
-        else
-        {
-            // If the BallKing hasn't moved, increment the timer
-            timeSinceLastMove += Time.deltaTime;
-
-            // If the BallKing hasn't moved for 10 seconds, display a "Game Over" message
-            if (timeSinceLastMove >= 10)
+            // Check if the BallKing has moved
+            if (ballKing.transform.position != lastPosition)
             {
-                gameOverText.text = "Game Over";
-                timeSinceLastMove = 0; // Reset the timer to prevent the message from being displayed repeatedly
+                // If the BallKing has moved, reset the timer and update the last position
+                timeSinceLastMove = 0;
+                lastPosition = ballKing.transform.position;
             }
-        }
+            else
+            {
+                // If the BallKing hasn't moved, increment the timer
+                timeSinceLastMove += Time.deltaTime;
 
-        // If the R key is pressed, reload the current scene
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                // If the BallKing hasn't moved for 10 seconds, display a "Game Over" message
+                if (timeSinceLastMove >= 10)
+                {
+                    gameOverText.text = "Game Over";
+                    timeSinceLastMove = 0; // Reset the timer to prevent the message from being displayed repeatedly
+                }
+            }
+
+            // If the R key is pressed, reload the current scene
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            yield return new WaitForSeconds(0.5f); // wait for half a second before the next update
         }
+    }
+
+    void Start()
+    {
+        StartCoroutine(SlowUpdate());
     }
 }
