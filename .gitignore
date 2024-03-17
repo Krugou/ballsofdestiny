@@ -1,0 +1,78 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Ll]ibrary/
+[Ll]ocal[Cc]ache/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+/.idea/
+/*.tmSolution
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ============ #
+# Unity YAML #
+# ============ #
+*.pidb.meta
+
+# ============= #
+# Unity Package #
+# ============= #
+*.unitypackage
+
+# ===================== #
+# Unity3D generated files #
+# ===================== #
+*.unityproj
+*.mat
+*.meta
+*.unity
+*.asset
+
+# ============================= #
+# Rider generated files #
+# ============================= #
+.idea/
+*.csproj
+*.pidb
+*.sln*
+*.suo
+*.user
+*.userprefs
+*.tmSolution
+
+# =============================== #
+# Custom Project Specific Ignore #
+# =============================== #
+
+# Ignore scene backups except for .unity files
+*.bak
