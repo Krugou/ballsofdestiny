@@ -4,13 +4,10 @@
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
-[Ll]ibrary/
-[Ll]ocal[Cc]ache/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
 [Ll]ogs/
-[Uu]ser[Ss]ettings/
+[Ll]ibrary/
+sysinfo.txt
+*.stackdump
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -26,7 +23,6 @@
 /*.unityproj
 /*.booproj
 /.idea/
-/*.tmSolution
 
 # ============ #
 # OS generated #
@@ -52,11 +48,10 @@ Thumbs.db
 # ===================== #
 # Unity3D generated files #
 # ===================== #
-*.unityproj
 *.mat
-*.meta
-*.unity
-*.asset
+*.anim
+*.prefab
+*.physicMaterial
 
 # ============================= #
 # Rider generated files #
@@ -73,6 +68,4 @@ Thumbs.db
 # =============================== #
 # Custom Project Specific Ignore #
 # =============================== #
-
-# Ignore scene backups except for .unity files
-*.bak
+# Add your custom ignore entries here
